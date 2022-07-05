@@ -15,17 +15,26 @@ public class Player {
     @Column(name="id",nullable=false)
     
     private Long id;
+    
     @Column(name="name")
     private String name;
+    
     @Column(name="score")
     private int score;
     
-    public Player() {
-    }
+//    @JsonIgnoreProperties({"players"})
+@JsonIgnoreProperties({"player"})
+@OneToMany(mappedBy = "player", fetch = FetchType.LAZY)
+private List<Enrollment> enrollments;
+
     
     public Player(String name, int score) {
         this.name = name;
         this.score = score;
+        this.enrollments = new ArrayList<Enrollment>();
+    }
+    
+    public Player() {
     }
     
     public Long getId() {
@@ -52,4 +61,11 @@ public class Player {
         this.score = score;
     }
     
+    public List<Enrollment> getEnrollments() {
+        return enrollments;
+    }
+    
+    public void setEnrollments(List<Enrollment> enrollments) {
+        this.enrollments = enrollments;
+    }
 }

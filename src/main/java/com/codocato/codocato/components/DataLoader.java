@@ -36,10 +36,10 @@ public class DataLoader implements ApplicationRunner {
         Player player1 = new Player("Mario", 0);
         playerRepository.save(player1);
         
-        Lesson lesson1 = new Lesson("Data Types", false, 100, player1);
+        Lesson lesson1 = new Lesson("Data Types", false, 100);
         lessonRepository.save(lesson1);
     
-        Lesson lesson2 = new Lesson("Data Types", false, 100, player1);
+        Lesson lesson2 = new Lesson("Data Types", false, 100);
         lessonRepository.save(lesson2);
         
         Prompt prompt1 = new Prompt("boolean", "true1.png", "A boolean is..", 500, 200, lesson1);
@@ -53,8 +53,8 @@ public class DataLoader implements ApplicationRunner {
 //        lessonRepository.save(lesson1);
     
    
-        
-        
+    
+    
     
     
     

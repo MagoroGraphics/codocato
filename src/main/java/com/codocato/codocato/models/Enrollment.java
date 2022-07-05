@@ -14,22 +14,50 @@ public class Enrollment {
     @Column(name = "id", nullable = false)
     private Long id;
     
-    @JsonIgnoreProperties({"pirates"})
-    @ManyToOne
-    @JoinColumn(name = "ship_id", nullable = false)
-    private Ship ship;
-    
-    private Long playerId;
-    private Long LessonId;
+    @Column(name = "isComplete")
     private boolean isComplete;
     
+    @ManyToOne
+    @JsonIgnoreProperties({"enrollments"})
+    @JoinColumn(name = "player_id", nullable = false)
+    private Player player;
+    
+    
+    @ManyToOne
+    @JsonIgnoreProperties({"enrollments"})
+    @JoinColumn(name = "lesson_id", nullable = false)
+    private Lesson lesson;
+    
+    public Enrollment(Player player, Lesson lesson) {
+        this.isComplete = false;
+        this.player = player;
+        this.lesson = lesson;
+    }
     public Enrollment() {
-        this.playerId = player.getId();
+    }
+    public boolean isComplete() {
+        return isComplete;
     }
     
-    @JsonIgnoreProperties({"enrollment"})
-    @OneToMany(mappedBy = "enrollment", fetch = FetchType.LAZY)
-    private Player player;
+    public void setComplete(boolean complete) {
+        isComplete = complete;
+    }
+    
+    public Player getPlayer() {
+        return player;
+    }
+    
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    public Lesson getLesson() {
+        return lesson;
+    }
+    
+    public void setLesson(Lesson lesson) {
+        this.lesson = lesson;
+    }
     
     public Long getId() {
         return id;
