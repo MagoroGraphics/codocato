@@ -1,7 +1,6 @@
 package com.codocato.codocato.controllers;
 
 import com.codocato.codocato.models.Lesson;
-import com.codocato.codocato.models.Player;
 import com.codocato.codocato.repositories.LessonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

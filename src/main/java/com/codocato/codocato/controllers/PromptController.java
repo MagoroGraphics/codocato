@@ -1,8 +1,6 @@
 package com.codocato.codocato.controllers;
 
-import com.codocato.codocato.models.Player;
 import com.codocato.codocato.models.Prompt;
-import com.codocato.codocato.repositories.PlayerRepository;
 import com.codocato.codocato.repositories.PromptRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
