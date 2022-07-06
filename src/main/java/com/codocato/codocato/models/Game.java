@@ -21,19 +21,20 @@ public class Game {
     @Column(name="pointValue")
     private int pointsValue;
     
-    public Game(String name, boolean isComplete, int pointsValue) {
-        this.name = name;
-        this.isComplete = isComplete;
-        this.pointsValue = pointsValue;
-    }
-    
-    public Game() {
-    }
-    
     @OneToOne
     @MapsId
     @JoinColumn(name = "lesson_id")
     private Lesson lesson;
+    
+    public Game(String name, boolean isComplete, int pointsValue) {
+        this.name = name;
+        this.isComplete = isComplete;
+        this.pointsValue = pointsValue;
+        this.lesson = new Lesson();
+    }
+    
+    public Game() {
+    }
     
     
     //region Getters and Setters

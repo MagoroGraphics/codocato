@@ -28,19 +28,6 @@ public class Prompt {
     @JoinColumn(name="lesson_id", nullable=false)
     private Lesson lesson;
     
-    @ManyToOne
-    @JoinColumn(name = "enrollment_id")
-    private Enrollment enrollment;
-    
-    public Enrollment getEnrollment() {
-        return enrollment;
-    }
-    
-    public void setEnrollment(Enrollment enrollment) {
-        this.enrollment = enrollment;
-    }
-    
-    
     public Prompt() {
     }
     
@@ -50,6 +37,7 @@ public class Prompt {
         this.fact = fact;
         this.positionX = positionX;
         this.positionY = positionY;
+        
     }
     
     
@@ -57,6 +45,7 @@ public class Prompt {
     public Long getId() {
         return id;
     }
+    
     
     public void setId(Long id) {
         this.id = id;
@@ -109,6 +98,7 @@ public class Prompt {
     public void setLesson(Lesson lesson) {
         this.lesson = lesson;
     }
+    
     //endregion
     
 }
