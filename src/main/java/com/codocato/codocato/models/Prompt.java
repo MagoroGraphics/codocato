@@ -44,15 +44,16 @@ public class Prompt {
     public Prompt() {
     }
     
-    public Prompt(String name, String imageSrc, String fact, int positionX, int positionY, Lesson lesson) {
+    public Prompt(String name, String imageSrc, String fact, int positionX, int positionY) {
         this.name = name;
         this.imageSrc = imageSrc;
         this.fact = fact;
         this.positionX = positionX;
         this.positionY = positionY;
-        this.lesson = lesson;
     }
     
+    
+    //region Getters and Setters
     public Long getId() {
         return id;
     }
@@ -108,6 +109,6 @@ public class Prompt {
     public void setLesson(Lesson lesson) {
         this.lesson = lesson;
     }
-    
+    //endregion
     
 }

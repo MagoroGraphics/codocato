@@ -21,11 +21,22 @@ public class Game {
     @Column(name="pointValue")
     private int pointsValue;
     
+    public Game(String name, boolean isComplete, int pointsValue) {
+        this.name = name;
+        this.isComplete = isComplete;
+        this.pointsValue = pointsValue;
+    }
+    
+    public Game() {
+    }
+    
     @OneToOne
     @MapsId
     @JoinColumn(name = "lesson_id")
     private Lesson lesson;
     
+    
+    //region Getters and Setters
     public Long getId() {
         return id;
     }
@@ -33,5 +44,38 @@ public class Game {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public boolean isComplete() {
+        return isComplete;
+    }
+    
+    public void setComplete(boolean complete) {
+        isComplete = complete;
+    }
+    
+    public int getPointsValue() {
+        return pointsValue;
+    }
+    
+    public void setPointsValue(int pointsValue) {
+        this.pointsValue = pointsValue;
+    }
+    
+    public Lesson getLesson() {
+        return lesson;
+    }
+    
+    public void setLesson(Lesson lesson) {
+        this.lesson = lesson;
+    }
+    //endregion
     
 }

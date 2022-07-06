@@ -34,6 +34,8 @@ public class Enrollment {
     }
     public Enrollment() {
     }
+    
+    //region Getters and Setters
     public boolean isComplete() {
         return isComplete;
     }
@@ -65,4 +67,5 @@ public class Enrollment {
     public void setId(Long id) {
         this.id = id;
     }
+    //endregion
 }

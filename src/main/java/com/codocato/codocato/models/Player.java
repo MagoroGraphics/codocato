@@ -37,6 +37,8 @@ private List<Enrollment> enrollments;
     public Player() {
     }
     
+    
+    //region Getters and Setters
     public Long getId() {
         return id;
     }
@@ -68,4 +70,5 @@ private List<Enrollment> enrollments;
     public void setEnrollments(List<Enrollment> enrollments) {
         this.enrollments = enrollments;
     }
+    //endregion
 }

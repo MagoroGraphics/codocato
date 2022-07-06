@@ -37,17 +37,21 @@ public class Lesson {
     @PrimaryKeyJoinColumn
     private Game game;
     
-    public Lesson(String name, boolean isComplete, int pointValue) {
+    public Lesson(String name, boolean isComplete, int pointValue, Game game, ArrayList<Prompt> prompts) {
         this.name = name;
         this.isComplete = isComplete;
         this.pointValue = pointValue;
         this.enrollments = new ArrayList<Enrollment>();
+        this.game = game;
+        this.prompts = prompts;
         
     }
     
     public Lesson() {
     }
     
+    
+    //region Getters and Setters
     public Long getId() {
         return id;
     }
@@ -95,4 +99,5 @@ public class Lesson {
     public void setEnrollments(List<Enrollment> enrollments) {
         this.enrollments = enrollments;
     }
+    //endregion
 }
