@@ -1,5 +1,6 @@
 package com.codocato.codocato.components;
 
+import com.codocato.codocato.models.Enrollment;
 import com.codocato.codocato.models.Lesson;
 import com.codocato.codocato.models.Player;
 import com.codocato.codocato.models.Prompt;
@@ -18,6 +19,13 @@ import java.util.List;
 @Component
 public class DataLoader implements ApplicationRunner {
     
+    
+    promptRepository.deleteAll();
+    gameRepository.deleteAll();
+    lessonRepository.deleteAll();
+    enrollmentRepository.deleteAll();
+    playerRepository.deleteAll();
+    
     @Autowired
     PlayerRepository playerRepository;
     
@@ -29,6 +37,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     EnrollmentRepository enrollmentRepository;
+    
+    @Autowired
+    GameRepository gameRepository;
     
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -48,16 +59,10 @@ public class DataLoader implements ApplicationRunner {
 
         Prompt prompt1 = new Prompt("boolean", "true1.png", "A boolean is..", 500, 200, lesson1);
         promptRepository.save(prompt1);
+    
+        Enrollment enrollment1 = new Enrollment(player1, lesson1);
+        enrollmentRepository.save(enrollment1);
         
-//        completedLessons.add(lesson1);
-//        playerRepository.save(player1);
-//        upcomingLesson.add(lesson2);
-//        playerRepository.save(player1);
-//        prompts.add(prompt1);
-//        lessonRepository.save(lesson1);
-    
-   
-    
     
     
     

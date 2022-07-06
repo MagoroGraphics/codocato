@@ -33,6 +33,10 @@ public class Lesson {
     @OneToMany(mappedBy = "lesson", fetch = FetchType.LAZY)
     private List<Enrollment> enrollments;
     
+    @OneToOne(mappedBy = "lesson", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Game game;
+    
     public Lesson(String name, boolean isComplete, int pointValue) {
         this.name = name;
         this.isComplete = isComplete;
