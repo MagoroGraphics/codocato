@@ -19,6 +19,9 @@ public class Player {
     @Column(name="name")
     private String name;
     
+    @Column(name="avatar")
+    private String avatar;
+    
     @Column(name="score")
     private int score;
     
@@ -28,8 +31,9 @@ public class Player {
 private List<Enrollment> enrollments;
 
     
-    public Player(String name, int score) {
+    public Player(String name, String avatar, int score) {
         this.name = name;
+        this.avatar = avatar;
         this.score = score;
         this.enrollments = new ArrayList<Enrollment>();
     }
