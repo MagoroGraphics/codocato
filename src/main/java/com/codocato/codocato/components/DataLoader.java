@@ -54,11 +54,11 @@ public class DataLoader implements ApplicationRunner {
         
         //Set saved lesson to a prompt
         prompt1.setLesson(lesson1);
-        //Prompt exists WITH lesson as lessonw as saved first and then assigned to prompt and prompt is then saVED
+        //Prompt exists WITH lesson as lesson as saved first and then assigned to prompt and prompt is then saVED
         promptRepository.save(prompt1);
     
         
-        Player player1 = new Player("Mario", 0);
+        Player player1 = new Player("Mario", "cat_1.png", 0);
         playerRepository.save(player1);
 
         Enrollment enrollment1 = new Enrollment(player1, lesson1);
