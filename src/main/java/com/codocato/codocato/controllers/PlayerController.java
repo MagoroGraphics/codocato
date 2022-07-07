@@ -22,6 +22,7 @@ public class PlayerController {
     @GetMapping(value="/players/{id}")
     public Optional<Player> getPlayer(@PathVariable Long id){return playerRepository.findById(id);}
     
+    
     @PostMapping(value="/players")
     public ResponseEntity<Player>postPlayer(@RequestBody Player player){
     playerRepository.save(player);

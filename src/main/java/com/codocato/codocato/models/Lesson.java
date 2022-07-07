@@ -1,6 +1,7 @@
 package com.codocato.codocato.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,6 +25,9 @@ public class Lesson {
     @Column(name="pointValue")
     private int pointValue;
     
+    @Column(name="backgroundImageUrl")
+    private String bgImgUrl;
+    
     @JsonIgnoreProperties({"lesson"})
     @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL)
     private List<Prompt> prompts;
@@ -33,14 +37,18 @@ public class Lesson {
     private List<Enrollment> enrollments;
     
     //@JsonIgnoreProperties({"lesson"})
-    @OneToOne(mappedBy = "lesson", cascade = CascadeType.ALL)
-    //@PrimaryKeyJoinColumn
+    @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnoreProperties({"lesson"})
+    @JoinColumn(name = "game_id", referencedColumnName = "id", nullable = false)
     private Game game;
     
-    public Lesson(String name, boolean isComplete, int pointValue) {
+    
+
+    public Lesson(String name, boolean isComplete, int pointValue, String bgImgUrl) {
         this.name = name;
-        this.isComplete = isComplete;
+        this.isComplete = isComplete; //might not need this
         this.pointValue = pointValue;
+        this.bgImgUrl = bgImgUrl;
         this.enrollments = new ArrayList<>();
         this.prompts = new ArrayList<>();
     }
@@ -107,6 +115,14 @@ public class Lesson {
     
     public void addPrompt(Prompt prompt){
         this.prompts.add(prompt);
+    }
+    
+    public String getBgImgUrl() {
+        return bgImgUrl;
+    }
+    
+    public void setBgImgUrl(String bgImgUrl) {
+        this.bgImgUrl = bgImgUrl;
     }
     
     //endregion

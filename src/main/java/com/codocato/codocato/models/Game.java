@@ -1,7 +1,5 @@
 package com.codocato.codocato.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 
 @Entity
@@ -21,14 +19,12 @@ public class Game {
     @Column(name="pointValue")
     private int pointsValue;
     
-    @OneToOne
-    //@MapsId
-    //@JoinColumn(name = "lesson_id")
+    @OneToOne(mappedBy = "game")
     private Lesson lesson;
     
     public Game(String name, boolean isComplete, int pointsValue) {
         this.name = name;
-        this.isComplete = isComplete;
+        this.isComplete = isComplete; //might not need this
         this.pointsValue = pointsValue;
         //this.lesson = new Lesson();
     }

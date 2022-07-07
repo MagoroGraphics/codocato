@@ -31,10 +31,10 @@ public class Player {
 private List<Enrollment> enrollments;
 
     
-    public Player(String name, String avatar, int score) {
+    public Player(String name, String avatar) {
         this.name = name;
         this.avatar = avatar;
-        this.score = score;
+        this.score = 0;
         this.enrollments = new ArrayList<Enrollment>();
     }
     
@@ -74,5 +74,14 @@ private List<Enrollment> enrollments;
     public void setEnrollments(List<Enrollment> enrollments) {
         this.enrollments = enrollments;
     }
+    
+    public String getAvatar() {
+        return avatar;
+    }
+    
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+    
     //endregion
 }
