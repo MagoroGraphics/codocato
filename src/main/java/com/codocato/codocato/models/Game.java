@@ -22,15 +22,15 @@ public class Game {
     private int pointsValue;
     
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "lesson_id")
+    //@MapsId
+    //@JoinColumn(name = "lesson_id")
     private Lesson lesson;
     
     public Game(String name, boolean isComplete, int pointsValue) {
         this.name = name;
         this.isComplete = isComplete;
         this.pointsValue = pointsValue;
-        this.lesson = new Lesson();
+        //this.lesson = new Lesson();
     }
     
     public Game() {

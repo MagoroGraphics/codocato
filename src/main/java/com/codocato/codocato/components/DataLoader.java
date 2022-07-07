@@ -37,29 +37,35 @@ public class DataLoader implements ApplicationRunner {
 //        promptRepository.deleteAll();
 //        lessonRepository.deleteAll();
     
-        Game game1 = new Game("Data types sorting", false, 500);
-        gameRepository.save(game1);
         
-        Lesson lesson1 = new Lesson("Data Types", false, 100, game1);
+        
+        Lesson lesson1 = new Lesson("Data Types", false, 100);
+
+        Game game1 = new Game("Data types sorting", false, 500);
+        lesson1.setGame(game1);
         lessonRepository.save(lesson1);
-    
-        Lesson lesson2 = new Lesson("Data Types", false, 100, game1);
-        lessonRepository.save(lesson2);
-    
+        gameRepository.save(game1);
+   
         Prompt prompt1 = new Prompt("boolean", "true1.png", "A boolean is..", 500, 200);
-        promptRepository.save(prompt1);
-    
         Prompt prompt2 = new Prompt("boolean", "true1.png", "A boolean is..", 500, 200);
+        
+        //Prompt exists alone
         promptRepository.save(prompt2);
         
-        lesson1.addPrompt(prompt1);
-        lesson1.addPrompt(prompt2);
-        lessonRepository.save(lesson1);
+        //Set saved lesson to a prompt
+        prompt1.setLesson(lesson1);
+        //Prompt exists WITH lesson as lessonw as saved first and then assigned to prompt and prompt is then saVED
+        promptRepository.save(prompt1);
     
+        
         Player player1 = new Player("Mario", 0);
         playerRepository.save(player1);
 
         Enrollment enrollment1 = new Enrollment(player1, lesson1);
         enrollmentRepository.save(enrollment1);
+    
+        //Example of an update because it HAS AN ID
+        //lesson1.setName("ddd");
+        //lessonRepository.save(lesson1);
     }
 }

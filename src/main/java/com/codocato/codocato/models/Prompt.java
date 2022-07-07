@@ -11,7 +11,6 @@ public class Prompt {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="id",nullable=false)
-    
     private Long id;
     @Column(name="name")
     private String name;
@@ -24,8 +23,8 @@ public class Prompt {
     @Column(name="positionY")
     private int positionY;
     @JsonIgnoreProperties({"prompts"})
-    @ManyToOne(optional=false)
-    @JoinColumn(name="lesson_id", nullable=false)
+    @ManyToOne()
+    @JoinColumn(name="lesson_id")
     private Lesson lesson;
     
     public Prompt() {
@@ -37,7 +36,6 @@ public class Prompt {
         this.fact = fact;
         this.positionX = positionX;
         this.positionY = positionY;
-        
     }
     
     

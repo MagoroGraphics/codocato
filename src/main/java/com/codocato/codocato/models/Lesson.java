@@ -25,24 +25,23 @@ public class Lesson {
     private int pointValue;
     
     @JsonIgnoreProperties({"lesson"})
-    @OneToMany(mappedBy = "lesson", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL)
     private List<Prompt> prompts;
     
-    
     @JsonIgnoreProperties({"lesson"})
-    @OneToMany(mappedBy = "lesson", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL)
     private List<Enrollment> enrollments;
     
+    //@JsonIgnoreProperties({"lesson"})
     @OneToOne(mappedBy = "lesson", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    //@PrimaryKeyJoinColumn
     private Game game;
     
-    public Lesson(String name, boolean isComplete, int pointValue, Game game) {
+    public Lesson(String name, boolean isComplete, int pointValue) {
         this.name = name;
         this.isComplete = isComplete;
         this.pointValue = pointValue;
         this.enrollments = new ArrayList<>();
-        this.game = game;
         this.prompts = new ArrayList<>();
     }
     
