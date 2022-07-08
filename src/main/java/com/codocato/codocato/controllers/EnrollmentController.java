@@ -32,4 +32,10 @@ public class EnrollmentController {
             return new ResponseEntity<>(enrollment, HttpStatus.CREATED);
         }
 
+        @GetMapping(value="/players/{id}/enrollments/next")
+        public ResponseEntity<Optional <Enrollment>> findNextFalseEnrollment(
+                @PathVariable Long id){
+            return new ResponseEntity<>(enrollmentRepository.findFirstByIsCompleteFalseAndPlayer_IdOrderByIdAsc(id), HttpStatus.CREATED);
+        }
+
     }
