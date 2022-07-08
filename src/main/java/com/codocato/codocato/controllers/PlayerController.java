@@ -44,18 +44,27 @@ public class PlayerController {
 
 //    using forEach, map through these, and for each lesson, create an enrollment instance using the lessonId and the posted playerID
 
-            allLessons.forEach(lesson -> {
+        allLessons.forEach(lesson -> {
                 Enrollment enrollment;
                 enrollment = new Enrollment(player, lesson);
 
                 enrollmentRepository.save(enrollment);
-
             }
         );
 
 //    add these enrollments to the player enrollment array
 
-        
+        ArrayList<Enrollment> allEnrollments = (ArrayList<Enrollment>) enrollmentRepository.findAll();
+        ArrayList<Enrollment> playerEnrollments = new ArrayList<>();
+
+        allEnrollments.forEach(enrollment -> {
+            if (enrollment.getPlayer() == player) {
+                playerEnrollments.add((enrollment));
+            }
+        });
+
+        player.setEnrollments(playerEnrollments);
+
 
     return new ResponseEntity<>(player, HttpStatus.CREATED);
     }
