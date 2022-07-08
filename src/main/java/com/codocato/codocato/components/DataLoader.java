@@ -54,16 +54,28 @@ public class DataLoader implements ApplicationRunner {
         
         
    
-        Prompt prompt1 = new Prompt("boolean", "true1.png", "A boolean is..", 500, 200);
-        Prompt prompt2 = new Prompt("boolean", "true1.png", "A boolean is..", 500, 200);
+        Prompt prompt1 = new Prompt("boolean", "lesson_prompts/off-switch.svg", "A boolean is..", 500, 200);
+        Prompt prompt2 = new Prompt("string", "lesson_prompts/_banana_.svg", "A string is..", 500, 200);
+        Prompt prompt3 = new Prompt("integer", "lesson_prompts/7-01.svg", "An integer is..", 500, 200);
+        Prompt prompt4 = new Prompt("float", "lesson_prompts/1-5_float.svg", "A double is..", 500, 200);
         
         //Prompt exists alone
+        promptRepository.save(prompt1);
         promptRepository.save(prompt2);
+        promptRepository.save(prompt3);
+        promptRepository.save(prompt4);
         
         //Set saved lesson to a prompt
         prompt1.setLesson(lesson1);
+        prompt2.setLesson(lesson1);
+        prompt3.setLesson(lesson1);
+        prompt4.setLesson(lesson1);
+
         //Prompt exists WITH lesson as lesson as saved first and then assigned to prompt and prompt is then saVED
         promptRepository.save(prompt1);
+        promptRepository.save(prompt2);
+        promptRepository.save(prompt3);
+        promptRepository.save(prompt4);
     
         
         Player player1 = new Player("Mario", "cat_1.png");
