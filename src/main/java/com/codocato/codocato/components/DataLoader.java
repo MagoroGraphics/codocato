@@ -54,10 +54,10 @@ public class DataLoader implements ApplicationRunner {
         
         
    
-        Prompt prompt1 = new Prompt("boolean", "lesson_prompts/off-switch.svg", "A boolean is..", 500, 200);
-        Prompt prompt2 = new Prompt("string", "lesson_prompts/_banana_.svg", "A string is..", 500, 200);
-        Prompt prompt3 = new Prompt("integer", "lesson_prompts/7-01.svg", "An integer is..", 500, 200);
-        Prompt prompt4 = new Prompt("float", "lesson_prompts/1-5_float.svg", "A double is..", 500, 200);
+        Prompt prompt1 = new Prompt("boolean", "lesson_prompts/off-switch.svg", "box-boolean.svg","A boolean is..", 500, 200);
+        Prompt prompt2 = new Prompt("string", "lesson_prompts/_banana_.svg", "box-string.svg","A string is..", 500, 200);
+        Prompt prompt3 = new Prompt("integer", "lesson_prompts/7-01.svg", "box-integer.svg","An integer is..", 500, 200);
+        Prompt prompt4 = new Prompt("float", "lesson_prompts/1-5_float.svg", "box-float.svg","A double is..", 500, 200);
         
         //Prompt exists alone
         promptRepository.save(prompt1);

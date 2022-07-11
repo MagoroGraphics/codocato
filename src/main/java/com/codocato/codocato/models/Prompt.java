@@ -14,8 +14,12 @@ public class Prompt {
     private Long id;
     @Column(name="name")
     private String name;
+    
     @Column(name="imageSrc")
     private String imageSrc;
+    
+    @Column(name="gameImageSrc")
+    private String gameImageSrc;
     @Column(name="fact")
     private  String fact;
     @Column(name="positionX")
@@ -30,9 +34,10 @@ public class Prompt {
     public Prompt() {
     }
     
-    public Prompt(String name, String imageSrc, String fact, int positionX, int positionY) {
+    public Prompt(String name, String imageSrc, String gameImageSrc, String fact, int positionX, int positionY) {
         this.name = name;
         this.imageSrc = imageSrc;
+        this.gameImageSrc = gameImageSrc;
         this.fact = fact;
         this.positionX = positionX;
         this.positionY = positionY;
@@ -63,6 +68,14 @@ public class Prompt {
     
     public void setImageSrc(String imageSrc) {
         this.imageSrc = imageSrc;
+    }
+    
+    public String getGameImageSrc() {
+        return gameImageSrc;
+    }
+    
+    public void setGameImageSrc(String gameImageSrc) {
+        this.gameImageSrc = gameImageSrc;
     }
     
     public String getFact() {
