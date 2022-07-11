@@ -8,13 +8,10 @@ import static org.junit.Assert.*;
 public class PlayerTest {
 
     public Player player1;
-    Enrollment enrollment1;
-    Lesson lesson1;
 
     @Before
     public void  before() {
         player1 = new Player("Mario", "cat_1.png");
-        enrollment1 = new Enrollment(player1, lesson1);
     }
 
     @Test
