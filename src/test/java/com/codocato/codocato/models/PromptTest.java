@@ -11,7 +11,7 @@ public class PromptTest {
 
     @Before
     public void before() {
-        prompt1 = new Prompt("boolean", "lesson_prompts/off-switch.svg", "A boolean is..", 500, 200);
+        prompt1 = new Prompt("boolean", "lesson_prompts/off-switch.svg", "box-boolean.png", "A boolean is..", 500, 200);
     }
 
     @Test
