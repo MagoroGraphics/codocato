@@ -11,7 +11,7 @@ public class GameTest {
 
     @Before
     public void before() {
-        game1 = new Game("Data types sorting", false, 500);
+        game1 = new Game("Data types sorting", false, 500, "game1_int4ro.json", "game1_outro.json");
     }
 
     @Test

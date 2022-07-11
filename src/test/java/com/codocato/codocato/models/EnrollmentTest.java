@@ -16,8 +16,8 @@ public class EnrollmentTest {
     @Before
     public void before() {
 
-        lesson1 = new Lesson("Data Types", false, 100, "lesson1_bg-01.svg");
-        lesson2 = new Lesson("Variables", false, 200, "lesson1_bg-01.svg");
+        lesson1 = new Lesson("Data Types", false, 100, "lesson1_bg-01.svg", "lesson1_intro.json");
+        lesson2 = new Lesson("Variables", false, 200, "lesson1_bg-01.svg", "lesson1_intro.json");
         player1 = new Player("Mario", "cat_1.png");
         player2 = new Player("David", "cat_2.png");
         enrollment = new Enrollment(player1, lesson1);

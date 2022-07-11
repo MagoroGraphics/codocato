@@ -13,7 +13,7 @@ public class LessonTest {
 
     @Before
     public void before() {
-        lesson1 = new Lesson("Data Types", false, 100, "lesson1_bg-01.svg");
+        lesson1 = new Lesson("Data Types", false, 100, "lesson1_bg-01.svg", "leesson1_intro.json");
         prompt1 = new Prompt("boolean", "lesson_prompts/off-switch.svg", "box-boolean.png", "A boolean is..", 500, 200);
         prompt2 = new Prompt("string", "lesson_prompts/_banana_.svg", "_banana_.svg","A string is..", 500, 200);
     }
