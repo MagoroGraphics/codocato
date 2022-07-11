@@ -39,12 +39,12 @@ public class DataLoader implements ApplicationRunner {
     
         
         
-        Lesson lesson1 = new Lesson("Data Types", false, 100, "lesson1_bg-01.svg");
-        Lesson lesson2 = new Lesson("Variables", false, 200, "lesson1_bg-01.svg");
+        Lesson lesson1 = new Lesson("Data Types", false, 100, "lesson1_bg-01.svg", "lesson1_intro.json");
+        Lesson lesson2 = new Lesson("Variables", false, 200, "lesson1_bg-01.svg", "lesson1_intro.json");
 
 
-        Game game1 = new Game("Data types sorting", false, 500);
-        Game game2 = new Game("Data types sorting 2", false, 800);
+        Game game1 = new Game("Data types sorting", false, 500, "game1_intro.json", "game1_intro.json");
+        Game game2 = new Game("Data types sorting 2", false, 800, "lesson1_intro.json", "game1_outro.json");
         //gameRepository.save(game1);
         lesson1.setGame(game1);
         //This updates

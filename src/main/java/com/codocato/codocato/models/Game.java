@@ -13,6 +13,12 @@ public class Game {
     @Column(name="name")
     private String name;
     
+    @Column(name="gameIntroAnimation")
+    private String lottieGameIntro;
+    
+    @Column(name="gameOutroAnimation")
+    private String lottieGameOutro;
+    
     @Column(name="isComplete")
     private boolean isComplete;
     
@@ -22,10 +28,12 @@ public class Game {
     @OneToOne(mappedBy = "game")
     private Lesson lesson;
     
-    public Game(String name, boolean isComplete, int pointsValue) {
+    public Game(String name, boolean isComplete, int pointsValue, String lottieGameIntro,  String lottieGameOutro) {
         this.name = name;
         this.isComplete = isComplete; //might not need this
         this.pointsValue = pointsValue;
+        this.lottieGameIntro = lottieGameIntro;
+        this.lottieGameOutro = lottieGameOutro;
         //this.lesson = new Lesson();
     }
     
@@ -48,6 +56,22 @@ public class Game {
     
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public String getLottieGameIntro() {
+        return lottieGameIntro;
+    }
+    
+    public void setLottieGameIntro(String lottieGameIntro) {
+        this.lottieGameIntro = lottieGameIntro;
+    }
+    
+    public String getLottieGameOutro() {
+        return lottieGameOutro;
+    }
+    
+    public void setLottieGameOutro(String lottieGameOutro) {
+        this.lottieGameOutro = lottieGameOutro;
     }
     
     public boolean isComplete() {

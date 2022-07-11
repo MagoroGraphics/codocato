@@ -28,6 +28,9 @@ public class Lesson {
     @Column(name="backgroundImageUrl")
     private String bgImgUrl;
     
+    @Column(name="lessonAnimation")
+    private String lottieLessonIntro;
+    
     @JsonIgnoreProperties({"lesson"})
     @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL)
     private List<Prompt> prompts;
@@ -44,11 +47,12 @@ public class Lesson {
     
     
 
-    public Lesson(String name, boolean isComplete, int pointValue, String bgImgUrl) {
+    public Lesson(String name, boolean isComplete, int pointValue, String bgImgUrl, String lottieLessonIntro) {
         this.name = name;
         this.isComplete = isComplete; //might not need this
         this.pointValue = pointValue;
         this.bgImgUrl = bgImgUrl;
+        this.lottieLessonIntro = lottieLessonIntro;
         this.enrollments = new ArrayList<>();
         this.prompts = new ArrayList<>();
     }
@@ -71,6 +75,14 @@ public class Lesson {
     
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public String getLottieLessonIntro() {
+        return lottieLessonIntro;
+    }
+    
+    public void setLottieLessonIntro(String lottieLessonIntro) {
+        this.lottieLessonIntro = lottieLessonIntro;
     }
     
     public boolean isComplete() {
