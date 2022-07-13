@@ -81,7 +81,10 @@ public class DataLoader implements ApplicationRunner {
 
         Enrollment enrollment1 = new Enrollment(player1, lesson1);
         enrollmentRepository.save(enrollment1);
-    
+
+        Enrollment enrollment2 = new Enrollment(player1, lesson2);
+        enrollmentRepository.save(enrollment2);
+
         //Example of an update because it HAS AN ID
         //lesson1.setName("ddd");
         //lessonRepository.save(lesson1);
