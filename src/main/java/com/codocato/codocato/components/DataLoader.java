@@ -52,10 +52,10 @@ public class DataLoader implements ApplicationRunner {
         lesson2.setGame(game2);
         lessonRepository.save(lesson2);
 
-        Prompt prompt1 = new Prompt("boolean", "lesson_prompts/off-switch.svg", "box-boolean.svg","This is a Boolean. A boolean always has a value of true or false", 24, 76);
-        Prompt prompt2 = new Prompt("string", "lesson_prompts/_banana_.svg", "box-string.svg","This is a String. A string is made up of letters. It has quotation marks around it", 45, 50);
-        Prompt prompt3 = new Prompt("integer", "lesson_prompts/7-01.svg", "box-integer.svg","This is an integer. An integer is a whole number that can be positive or negative", 25, 35);
-        Prompt prompt4 = new Prompt("float", "lesson_prompts/1-5_float.svg", "box-float.svg","This is a Float. A float is a number with a decimal point", 20, 18);
+        Prompt prompt1 = new Prompt("On/Off", "lesson_prompts/off-switch.svg", "box-boolean.svg","This is a boolean. It is on or off. True or false.", 24, 76);
+        Prompt prompt2 = new Prompt("banana", "lesson_prompts/_banana_.svg", "box-string.svg","This is a string. It is made up of characters and has quotation marks around it.", 45, 50);
+        Prompt prompt3 = new Prompt("7", "lesson_prompts/7-01.svg", "box-integer.svg","This is an integer. It is a whole number that can be positive or negative.", 25, 35);
+        Prompt prompt4 = new Prompt("1.5", "lesson_prompts/1-5_float.svg", "box-float.svg","This is a float. It is a number with a decimal point", 20, 18);
         
         //Prompt exists alone
         promptRepository.save(prompt1);
