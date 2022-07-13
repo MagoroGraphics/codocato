@@ -77,13 +77,38 @@ public class DataLoader implements ApplicationRunner {
     
         
         Player player1 = new Player("Mario", "codocato-avatar1.svg");
+        Player player2 = new Player("Emma", "codocato-avatar2.svg");
+        Player player3 = new Player("Matt", "codocato-avatar3.svg");
+        Player player4 = new Player("Silvia", "codocato-avatar2.svg");
         playerRepository.save(player1);
+        playerRepository.save(player2);
+        playerRepository.save(player3);
+        playerRepository.save(player4);
+
 
         Enrollment enrollment1 = new Enrollment(player1, lesson1);
         enrollmentRepository.save(enrollment1);
 
         Enrollment enrollment2 = new Enrollment(player1, lesson2);
         enrollmentRepository.save(enrollment2);
+
+        Enrollment enrollment3 = new Enrollment(player2, lesson1);
+        enrollmentRepository.save(enrollment3);
+
+        Enrollment enrollment4 = new Enrollment(player2, lesson2);
+        enrollmentRepository.save(enrollment4);
+
+        Enrollment enrollment5 = new Enrollment(player3, lesson1);
+        enrollmentRepository.save(enrollment5);
+
+        Enrollment enrollment6 = new Enrollment(player3, lesson2);
+        enrollmentRepository.save(enrollment6);
+
+        Enrollment enrollment7 = new Enrollment(player4, lesson1);
+        enrollmentRepository.save(enrollment7);
+
+        Enrollment enrollment8 = new Enrollment(player4, lesson2);
+        enrollmentRepository.save(enrollment8);
 
         //Example of an update because it HAS AN ID
         //lesson1.setName("ddd");
