@@ -40,7 +40,7 @@ public class DataLoader implements ApplicationRunner {
         
         
         Lesson lesson1 = new Lesson("Data Types", false, 100, "lesson1_bg-01.svg", "lesson1_intro.json");
-        Lesson lesson2 = new Lesson("Variables", false, 200, "l2-bg-01.jpg", "lesson1_intro.json");
+        Lesson lesson2 = new Lesson("Variables", false, 200, "l2-bg2-01.jpg", "lesson1_intro.json");
 
 
         Game game1 = new Game("Data types sorting", false, 500, "game1_intro.json", "game1_intro.json");
